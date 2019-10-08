@@ -1,13 +1,5 @@
-# 凯尼科技
+# 凯尼科技 · 官网源码
 
-[![Build Status](https://travis-ci.com/s1n1an/kiny-tech.svg?token=4oD5rfvVVLMZSXYyxUky&branch=master)](https://travis-ci.com/s1n1an/kiny-tech)  
+[前去瞧瞧~](https://kiny-tech)  
 
-## 运行项目
-```bash
-# 安装
-npm i
-# 本地测试
-npm run serve
-# 打包
-npm run build
-```
+[![Build Status](https://travis-ci.com/s1n1an/kiny-tech.svg?token=4oD5rfvVVLMZSXYyxUky&branch=master)](https://travis-ci.com/s1n1an/kiny-tech)
