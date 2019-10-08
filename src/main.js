@@ -3,7 +3,7 @@ import App from './app.vue'
 import router from './router.js'
 import store from './store.js'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = process.env.NODE_ENV === 'production'
 
 new Vue({
   router,
