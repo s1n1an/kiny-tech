@@ -1,5 +1,7 @@
 # 凯尼科技
 
+[![Build Status](https://travis-ci.com/s1n1an/kiny-tech.svg?token=4oD5rfvVVLMZSXYyxUky&branch=master)](https://travis-ci.com/s1n1an/kiny-tech)  
+
 ## 运行项目
 ```bash
 # 安装
