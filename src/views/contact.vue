@@ -1,10 +1,150 @@
 <template>
-  <main></main>
+  <main>
+    <div class="title">
+      <h1>Kiny的联系方式</h1>
+    </div>
+
+    <div class="content">
+      <section>
+        <div class="desc">QQ号码</div>
+        <div class="val">
+          <a
+            target="_blank"
+            href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes"
+          >532031821</a>
+        </div>
+        <div class="action">
+          <a
+            target="_blank"
+            href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes"
+          >发起QQ聊天</a>
+          <button class="copy" data-clipboard-text="532031821">复制QQ号码</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="desc">微信号</div>
+        <div class="val">a532031821</div>
+        <div class="action">
+          <button class="copy" data-clipboard-text="a532031821">复制微信号</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="desc">电子邮箱</div>
+        <div class="val">{{displayValue}}</div>
+        <div class="action">
+          <span @click="displayEmail">显示地址</span>
+          <button class="copy" :data-clipboard-text="email">复制邮箱地址</button>
+        </div>
+      </section>
+    </div>
+  </main>
 </template>
 
 <script>
-export default {}
+import clipboard from 'clipboard'
+
+export default {
+  name: 'contact',
+
+  data() {
+    return {
+      displayValue: '请点击「显示地址」按钮',
+      email: 'xiyiheng521@qq.com'
+    }
+  },
+
+  mounted() {
+    new clipboard('.copy')
+  },
+
+  methods: {
+    copy(val) {},
+
+    displayEmail() {
+      this.displayValue = this.email
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
+main {
+  padding: 5px 15px 15px;
+
+  .title {
+    margin-bottom: 1.2rem;
+
+    h1 {
+      font-size: 1.8rem;
+      font-family: 'fz-ys';
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    section {
+      width: 30%;
+      padding: 0.8rem;
+      border: 1px solid #999;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+      transition: all 350ms;
+
+      .desc {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .val {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .action a,
+      .action .copy,
+      .action span {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+        border: 1px #aaa solid;
+        border-radius: 4px;
+        margin: 0 0.4rem;
+        cursor: pointer;
+        background: none;
+
+        &:hover {
+          background-color: #aaa;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    .title {
+      text-align: center;
+    }
+
+    .content {
+      flex-wrap: wrap;
+
+      section {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>
