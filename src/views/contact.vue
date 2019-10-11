@@ -7,12 +7,7 @@
     <div class="content">
       <section>
         <div class="desc">QQ号码</div>
-        <div class="val">
-          <a
-            target="_blank"
-            href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes"
-          >532031821</a>
-        </div>
+        <div class="val">532031821</div>
         <div class="action">
           <a
             target="_blank"
@@ -94,7 +89,7 @@ main {
     section {
       width: 30%;
       padding: 0.8rem;
-      border: 1px solid #999;
+      color: #fff;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -102,6 +97,8 @@ main {
       align-items: center;
       margin-bottom: 1rem;
       transition: all 350ms;
+      background-image: url('~@img/repeat/5.jpg');
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px 0px;
 
       .desc {
         font-size: 1.5rem;
@@ -116,9 +113,10 @@ main {
       .action a,
       .action .copy,
       .action span {
+        color: #fff;
         font-size: 1rem;
         padding: 0.2rem 0.5rem;
-        border: 1px #aaa solid;
+        border: 1px #fff solid;
         border-radius: 4px;
         margin: 0 0.4rem;
         cursor: pointer;
