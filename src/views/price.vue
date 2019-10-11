@@ -52,6 +52,11 @@
           </li>
           <hr />
           <div class="more">
+            <span class="desc">售后服务 · 提供一个月内免费售后</span>
+            <span class="price">免费</span>
+          </div>
+
+          <div class="more">
             <span class="desc">增值服务 · 常熟地区上门服务</span>
             <span class="price">+ ￥25.00</span>
           </div>
@@ -125,7 +130,7 @@ main {
       }
 
       .more {
-        margin: 0.3rem 0;
+        margin: 0.5rem 0;
         border-radius: 4px;
         display: flex;
         justify-content: space-between;
