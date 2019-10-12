@@ -14,7 +14,6 @@
         <router-link to="/show">工作展示</router-link>
         <router-link to="/price">服务报价</router-link>
         <router-link to="/contact">联系方式</router-link>
-        <router-link to="/about">关于Kiny</router-link>
       </nav>
     </header>
 

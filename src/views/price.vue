@@ -26,7 +26,7 @@
         <hr />
         <div class="more">
           <span class="desc">增值服务 · 网店/闲鱼采购单</span>
-          <span class="price">+ ￥50.00</span>
+          <span class="price">+ ￥15.00</span>
         </div>
       </section>
 
@@ -99,6 +99,7 @@ main {
 
   .title {
     margin-bottom: 1.2rem;
+    text-align: center;
 
     h1 {
       font-size: 1.8rem;
@@ -120,6 +121,7 @@ main {
       padding: 1rem 0.8rem;
       width: 30%;
       border-radius: 3px;
+      background-color: #000;
       background: url('~@img/repeat/2.jpg');
       margin-bottom: 10px;
       color: #fff;
@@ -139,8 +141,8 @@ main {
         margin-bottom: 0.8rem;
 
         &:last-child {
-            margin-bottom: 0;
-          }
+          margin-bottom: 0;
+        }
 
         .price {
           padding: 2px 0.5rem;
@@ -190,10 +192,6 @@ main {
 
 @media (max-width: 450px) {
   main {
-    .title {
-      text-align: center;
-    }
-
     .content {
       flex-wrap: wrap;
 

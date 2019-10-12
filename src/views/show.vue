@@ -1,6 +1,12 @@
 <template>
   <main>
-    <img v-for="(img,i) of allPhotoList" :key="i" :src="img" />
+    <div class="title">
+      <h1>Kiny的日常工作写照</h1>
+    </div>
+
+    <div class="content">
+      <img v-for="(img,i) of allPhotoList" :key="i" :src="img" />
+    </div>
   </main>
 </template>
 
@@ -26,26 +32,42 @@ export default {
 
 <style lang="less" scoped>
 main {
-  padding: 15px 25px 10px;
-  column-count: 3;
-  column-gap: 25px;
+  padding-top: 10px;
 
-  img {
-    margin-bottom: 20px;
-    border-radius: 5px;
-    max-width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px 0px;
+  .title {
+    margin-bottom: 1.2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 1.8rem;
+      font-family: 'fz-ys';
+    }
+  }
+
+  .content {
+    padding: 0 25px 10px;
+    column-count: 3;
+    column-gap: 25px;
+
+    img {
+      margin-bottom: 20px;
+      border-radius: 5px;
+      max-width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px 0px;
+    }
   }
 }
 
 @media (max-width: 450px) {
   main {
-    padding: 0 7px 5px;
-    column-count: 2;
-    column-gap: 7px;
+    .content {
+      padding: 0 7px 5px;
+      column-count: 2;
+      column-gap: 7px;
 
-    img {
-      margin-bottom: 2px;
+      img {
+        margin-bottom: 2px;
+      }
     }
   }
 }

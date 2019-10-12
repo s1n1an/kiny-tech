@@ -13,7 +13,12 @@
             target="_blank"
             href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes"
           >发起QQ聊天</a>
-          <button class="copy" data-clipboard-text="532031821">复制QQ号码</button>
+          <button
+            class="copy"
+            :style="{color:qqCopied?'#47fe47':'#fff'}"
+            @click="copy('qq')"
+            data-clipboard-text="532031821"
+          >{{qqCopied?qqTextCopied:qqText}}</button>
         </div>
       </section>
 
@@ -21,7 +26,12 @@
         <div class="desc">微信号</div>
         <div class="val">a532031821</div>
         <div class="action">
-          <button class="copy" data-clipboard-text="a532031821">复制微信号</button>
+          <button
+            class="copy"
+            :style="{color:wxCopied?'#47fe47':'#fff'}"
+            @click="copy('wx')"
+            data-clipboard-text="a532031821"
+          >{{wxCopied?wxTextCopied:wxText}}</button>
         </div>
       </section>
 
@@ -30,7 +40,12 @@
         <div class="val">{{displayValue}}</div>
         <div class="action">
           <span @click="displayEmail">显示地址</span>
-          <button class="copy" :data-clipboard-text="email">复制邮箱地址</button>
+          <button
+            class="copy"
+            :style="{color:mailCopied?'#47fe47':'#fff'}"
+            @click="copy('mail')"
+            :data-clipboard-text="email"
+          >{{mailCopied?mailTextCopied:mailText}}</button>
         </div>
       </section>
     </div>
@@ -46,7 +61,19 @@ export default {
   data() {
     return {
       displayValue: '请点击「显示地址」按钮',
-      email: 'xiyiheng521@qq.com'
+      email: 'xiyiheng521@qq.com',
+
+      qqCopied: false,
+      wxCopied: false,
+      mailCopied: false,
+
+      qqText: '复制QQ号码',
+      wxText: '复制微信号',
+      mailText: '复制邮箱地址',
+
+      qqTextCopied: 'QQ号码已复制',
+      wxTextCopied: '微信号已复制',
+      mailTextCopied: '邮箱地址已复制'
     }
   },
 
@@ -55,7 +82,12 @@ export default {
   },
 
   methods: {
-    copy(val) {},
+    copy(item) {
+      this.qqCopied = false
+      this.wxCopied = false
+      this.mailCopied = false
+      this[`${item}Copied`] = true
+    },
 
     displayEmail() {
       this.displayValue = this.email
@@ -70,6 +102,7 @@ main {
 
   .title {
     margin-bottom: 1.2rem;
+    text-align: center;
 
     h1 {
       font-size: 1.8rem;
@@ -97,6 +130,7 @@ main {
       align-items: center;
       margin-bottom: 1rem;
       transition: all 350ms;
+      background-color: #000;
       background-image: url('~@img/repeat/5.jpg');
       box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px 0px;
 
@@ -116,14 +150,14 @@ main {
         color: #fff;
         font-size: 1rem;
         padding: 0.2rem 0.5rem;
-        border: 1px #fff solid;
+        border: 1px currentColor solid;
         border-radius: 4px;
         margin: 0 0.4rem;
         cursor: pointer;
         background: none;
 
         &:hover {
-          background-color: #aaa;
+          background-color: #333;
         }
       }
     }
