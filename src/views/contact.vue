@@ -48,6 +48,31 @@
           >{{mailCopied?mailTextCopied:mailText}}</button>
         </div>
       </section>
+
+      <section>
+        <div class="desc">微博</div>
+        <div class="val">阿妈港甚内XKinyX银古</div>
+        <div class="action">
+          <a target="_blank" href="https://weibo.com/u/1807990034">前往观摩</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="desc">闲鱼</div>
+        <div class="val">kiny日在校园</div>
+        <div class="action">
+          <a
+            target="_blank"
+            href="https://market.m.taobao.com/app/idleFish-F2e/IdleFishWeexPersonalPage/PersonalHome?userid=2392066812&ut_sk=1.XLqWRTwg0A8DAFg%252FNZq%252BPqQE_21407387_1571040455203.Copy.mypage.2392066812.2264215772&type=1&wh_weex=true&forceFlush=1"
+          >前往闲鱼</a>
+          <button
+            class="copy"
+            :style="{color:xyCopied?'#47fe47':'#fff'}"
+            @click="copy('xy')"
+            data-clipboard-text="【常熟Kiny技术，专业维修，优化，装配电脑】复制这条消息后，打开闲鱼€Jd3aYpsLaoZ€"
+          >{{xyCopied?xyTextCopied:xyText}}</button>
+        </div>
+      </section>
     </div>
   </main>
 </template>
@@ -66,14 +91,17 @@ export default {
       qqCopied: false,
       wxCopied: false,
       mailCopied: false,
+      xyCopied: false,
 
       qqText: '复制QQ号码',
       wxText: '复制微信号',
       mailText: '复制邮箱地址',
+      xyText: '复制淘口令',
 
       qqTextCopied: 'QQ号码已复制',
       wxTextCopied: '微信号已复制',
-      mailTextCopied: '邮箱地址已复制'
+      mailTextCopied: '邮箱地址已复制',
+      xyTextCopied: '淘口令已复制'
     }
   },
 
@@ -86,6 +114,7 @@ export default {
       this.qqCopied = false
       this.wxCopied = false
       this.mailCopied = false
+      this.xyCopied = false
       this[`${item}Copied`] = true
     },
 
@@ -112,7 +141,7 @@ main {
 
   .content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 
     a {
       color: #000;
@@ -128,7 +157,7 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1rem;
+      margin: 0 0.5rem 1rem;
       transition: all 350ms;
       background-color: #000;
       background-image: url('~@img/repeat/5.jpg');
