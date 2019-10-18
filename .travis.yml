@@ -9,14 +9,14 @@ cache: npm
 
 script: npm run build
 
-after_script: 
+after_success: 
   - cd ./dist
   - git init
   - git config user.name "${NAME}"
   - git config user.email "${MAIL}"
   - git add .
   - git commit -m "Travis CI 自动构建"
-  - git push --force --quiet "https://${TOKEN}@${URL}" master
+  - git push --force "https://${TOKEN}@${URL}" master
 
 deploy:
 skip_cleanup: true
