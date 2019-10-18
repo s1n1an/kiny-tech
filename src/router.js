@@ -13,6 +13,6 @@ const routes = [
   { component: Price, path: '/price' },
   { component: Contact, path: '/contact' }
 ]
-const router = new Router({ mode: 'history', routes })
+const router = new Router({ routes })
 
 export default router
