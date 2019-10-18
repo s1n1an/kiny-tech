@@ -2,7 +2,8 @@
   <div id="app">
     <header>
       <div class="title">
-        <img src="~@img/logo.jpg" />
+        <img @click="green=true" v-if="!green" src="~@img/logo.jpg" />
+        <img v-else src="~@img/logo2.jpg" />
         <div class="text">
           <h1>苏州凯尼科技 · 专业PC装机维修优化</h1>
           <h3>Suzhou Kiny Tech Ltd.</h3>
@@ -26,7 +27,9 @@ export default {
   name: 'app',
 
   data() {
-    return {}
+    return {
+      green: false
+    }
   },
 
   methods: {},
