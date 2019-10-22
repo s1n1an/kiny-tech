@@ -1,25 +1,23 @@
 language: node_js
+node_js:
+  - node
+cache: npm
+
 branches:
   only:
     - master
-node_js:
-  - "node"
-
-cache: npm
 
 script: npm run build
 
-after_success: 
-  - cd ./dist
-  - git init
-  - git config user.name "${NAME}"
-  - git config user.email "${MAIL}"
-  - git add .
-  - git commit -m "Travis CI 自动构建"
-  - git push --force "https://${TOKEN}@${URL}" master
-
 deploy:
-skip_cleanup: true
-local_dir: dist
-on:
-  branch: master
+  provider: pages
+  skip_cleanup: true
+  github_url: ${URL}
+  github_token: ${TOKEN}
+  keep_history: true
+  name: ${NAME}
+  email: ${MAIL}
+  repo: ${REPO}
+  local_dir: dist
+  on:
+    branch: master
