@@ -15,4 +15,4 @@ after_success:
   - git config user.email "${MAIL}"
   - git add .
   - git commit -m "Travis CI 自动构建"
-  - git push -q --force "https://${TOKEN}@${URL}" master
+  - git push --force "https://${TOKEN}@${URL}" master
