@@ -31,6 +31,14 @@
     <div class="photo">
       <img class="img" :src="photoSrc" />
     </div>
+
+    <div class="author">
+      <img src="@img/sn-icon.png" class="author-icon" />
+      <div class="author-item">
+        <div class="author-text">Copyright © 2017-2020</div>
+        <div class="author-text">via Frank (s1n1an).</div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -42,7 +50,7 @@ export default {
 
   data() {
     return {
-      gray: true,
+      gray: false,
       photoNum: 1,
       kinyPhoto
     }
@@ -130,6 +138,33 @@ main {
       max-width: 100%;
       height: auto;
       width: auto\9;
+    }
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+
+    .author-icon {
+      height: 50px;
+      width: 50px;
+      opacity: 0.4;
+      margin-right: 10px;
+    }
+
+    .author-item {
+      display: inline-block;
+
+      .author-text {
+        color: #aaaaaa;
+        margin-top: 5px;
+        font-size: 1.2em;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
   }
 }
