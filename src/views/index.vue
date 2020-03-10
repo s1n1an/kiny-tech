@@ -144,11 +144,11 @@ main {
   .author {
     display: flex;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 
     .author-icon {
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       opacity: 0.4;
       margin-right: 10px;
     }
@@ -159,7 +159,7 @@ main {
       .author-text {
         color: #aaaaaa;
         margin-top: 5px;
-        font-size: 1.2em;
+        font-size: 1em;
 
         &:first-child {
           margin-top: 0;
