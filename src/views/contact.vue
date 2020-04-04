@@ -9,16 +9,17 @@
         <div class="desc">QQ号码</div>
         <div class="val">532031821</div>
         <div class="action">
-          <a
-            target="_blank"
-            href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes"
-          >发起QQ聊天</a>
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=532031821&site=qq&menu=yes">
+            发起QQ聊天
+          </a>
           <button
-            class="copy"
-            :style="{color:qqCopied?'#47fe47':'#fff'}"
             @click="copy('qq')"
+            :style="{ color: qqCopied ? '#47fe47' : '#fff' }"
             data-clipboard-text="532031821"
-          >{{qqCopied?qqTextCopied:qqText}}</button>
+            class="copy"
+          >
+            {{ qqCopied ? qqTextCopied : qqText }}
+          </button>
         </div>
       </section>
 
@@ -27,25 +28,29 @@
         <div class="val">a532031821</div>
         <div class="action">
           <button
-            class="copy"
-            :style="{color:wxCopied?'#47fe47':'#fff'}"
             @click="copy('wx')"
+            :style="{ color: wxCopied ? '#47fe47' : '#fff' }"
             data-clipboard-text="a532031821"
-          >{{wxCopied?wxTextCopied:wxText}}</button>
+            class="copy"
+          >
+            {{ wxCopied ? wxTextCopied : wxText }}
+          </button>
         </div>
       </section>
 
       <section>
         <div class="desc">电子邮箱</div>
-        <div class="val">{{displayValue}}</div>
+        <div class="val">{{ displayValue }}</div>
         <div class="action">
           <span @click="displayEmail">显示地址</span>
           <button
-            class="copy"
-            :style="{color:mailCopied?'#47fe47':'#fff'}"
             @click="copy('mail')"
             :data-clipboard-text="email"
-          >{{mailCopied?mailTextCopied:mailText}}</button>
+            :style="{ color: mailCopied ? '#47fe47' : '#fff' }"
+            class="copy"
+          >
+            {{ mailCopied ? mailTextCopied : mailText }}
+          </button>
         </div>
       </section>
 
@@ -64,13 +69,17 @@
           <a
             target="_blank"
             href="https://market.m.taobao.com/app/idleFish-F2e/IdleFishWeexPersonalPage/PersonalHome?userid=2392066812&ut_sk=1.XLqWRTwg0A8DAFg%252FNZq%252BPqQE_21407387_1571040455203.Copy.mypage.2392066812.2264215772&type=1&wh_weex=true&forceFlush=1"
-          >前往闲鱼</a>
+          >
+            前往闲鱼
+          </a>
           <button
-            class="copy"
-            :style="{color:xyCopied?'#47fe47':'#fff'}"
             @click="copy('xy')"
+            :style="{ color: xyCopied ? '#47fe47' : '#fff' }"
             data-clipboard-text="【常熟Kiny技术，专业维修，优化，装配电脑】复制这条消息后，打开闲鱼€Jd3aYpsLaoZ€"
-          >{{xyCopied?xyTextCopied:xyText}}</button>
+            class="copy"
+          >
+            {{ xyCopied ? xyTextCopied : xyText }}
+          </button>
         </div>
       </section>
     </div>

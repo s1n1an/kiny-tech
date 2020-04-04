@@ -7,8 +7,4 @@ import '@css/global.less'
 
 Vue.config.productionTip = process.env.NODE_ENV === 'production'
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+new Vue({ router, store, render: (h) => h(App) }).$mount('#app')

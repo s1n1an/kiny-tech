@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <div class="title">
-        <img @click="green=true" v-if="!green" src="~@img/logo.jpg" />
+        <img v-if="!green" @click="green = true" src="~@img/logo.jpg" />
         <img v-else src="~@img/logo2.jpg" />
         <div class="text">
           <h1>苏州凯尼科技 · 专业PC装机维修优化</h1>
@@ -31,15 +31,11 @@ export default {
     return {
       green: false
     }
-  },
-
-  methods: {},
-
-  computed: {}
+  }
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 header {
   margin-bottom: 10px;
   background-image: url('~@img/repeat/3.jpg');

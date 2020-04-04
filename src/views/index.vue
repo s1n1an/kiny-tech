@@ -6,7 +6,7 @@
       <h6>家用/电竞/办公电脑专业定制配置，多年市场经验，性价比高，硬件稳定，值得信赖！</h6>
     </section>
 
-    <section style="margin-top:0;">
+    <section style="margin-top: 0;">
       <div class="action">
         <router-link to="/price">查看我们的业务</router-link>
         <router-link to="/contact">联系Kiny解决问题</router-link>
@@ -17,14 +17,14 @@
       <h1>怀念丽丽带给我们的欢乐时光</h1>
       <div class="action">
         <router-link to="/lili">R.I.P</router-link>
-        <span @click="gray=!gray">{{gray?'关闭':'开启'}}RIP配色</span>
+        <span @click="gray = !gray">{{ gray ? '关闭' : '开启' }}RIP配色</span>
       </div>
     </section>
 
     <section>
       <h1>Kiny照片</h1>
       <div class="action">
-        <span @click="nextPhoto">下一张照片 ({{photoNum}}/{{kinyPhoto}})</span>
+        <span @click="nextPhoto">下一张照片 ({{ photoNum }}/{{ kinyPhoto }})</span>
       </div>
     </section>
 
@@ -52,32 +52,29 @@ export default {
     return {
       gray: false,
       photoNum: 1,
-      kinyPhoto
+      kinyPhoto,
     }
   },
 
   methods: {
     nextPhoto() {
       this.photoNum = (this.photoNum % kinyPhoto) + 1
-    }
+    },
   },
 
   computed: {
     photoSrc() {
       return require(`@img/kiny/${this.photoNum}.jpg`)
-    }
+    },
   },
 
   watch: {
     gray(isGray) {
       const bodyStyle = document.getElementById('body').style
       bodyStyle.setProperty('filter', isGray ? 'gray' : 'none')
-      bodyStyle.setProperty(
-        '-webkit-filter',
-        isGray ? 'grayscale(100%)' : 'none'
-      )
-    }
-  }
+      bodyStyle.setProperty('-webkit-filter', isGray ? 'grayscale(100%)' : 'none')
+    },
+  },
 }
 </script>
 

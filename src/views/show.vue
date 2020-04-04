@@ -5,7 +5,7 @@
     </div>
 
     <div class="content">
-      <img v-for="(img,i) of allPhotoList" :key="i" :src="img" />
+      <img v-for="(img, i) of allPhotoList" :key="i" :src="img" />
     </div>
   </main>
 </template>
@@ -16,15 +16,9 @@ import { showPhoto } from '@/config.js'
 export default {
   name: 'show',
 
-  data() {
-    return {}
-  },
-
   computed: {
     allPhotoList() {
-      return new Array(showPhoto)
-        .fill(1)
-        .map((_, idx) => require(`@img/show/${idx + 1}.jpg`))
+      return new Array(showPhoto).fill(1).map((_, idx) => require(`@img/show/${idx + 1}.jpg`))
     }
   }
 }

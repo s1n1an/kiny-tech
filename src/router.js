@@ -8,6 +8,7 @@ import Contact from '@/views/contact.vue'
 import Lili from '@/views/lili.vue'
 
 Vue.use(Router)
+
 const routes = [
   { component: Index, path: '/' },
   { component: Show, path: '/show' },

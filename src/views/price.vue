@@ -32,9 +32,10 @@
 
       <section>
         <h3>装机/维修/优化</h3>
-        <p
-          class="tips"
-        >以下服务均特指 Windows 操作系统。默认为远程指导，按需求数收费，以实际问题解决为准。该价格不包含服务期间产生的购买激活码/硬件/付费软件等额外花费。</p>
+        <p class="tips">
+          以下服务均特指 Windows
+          操作系统。默认为远程指导，按需求数收费，以实际问题解决为准。该价格不包含服务期间产生的购买激活码/硬件/付费软件等额外花费。
+        </p>
         <ul>
           <li>
             <span class="desc">操作系统安装/机器组装</span>
@@ -50,12 +51,12 @@
           </li>
           <li>
             <span class="desc">复杂故障 (例如:硬盘数据恢复)</span>
-            <span class="price" style="color:#ffb300">联系议价</span>
+            <span class="price" style="color: #ffb300;">联系议价</span>
           </li>
           <hr />
           <div class="more">
             <span class="desc">售后服务 · 提供一个月内免费售后</span>
-            <span class="price" style="color:#47fe47;">免费</span>
+            <span class="price" style="color: #47fe47;">免费</span>
           </div>
 
           <div class="more">
@@ -71,15 +72,15 @@
         <ul>
           <li>
             <span class="desc">服务器/机房网络配置</span>
-            <span class="price" style="color:#ffb300">联系议价</span>
+            <span class="price" style="color: #ffb300;">联系议价</span>
           </li>
           <li>
             <span class="desc">BAT批处理制作</span>
-            <span class="price" style="color:#ffb300">联系议价</span>
+            <span class="price" style="color: #ffb300;">联系议价</span>
           </li>
           <li>
             <span class="desc">大数据处理</span>
-            <span class="price" style="color:#ffb300">联系议价</span>
+            <span class="price" style="color: #ffb300;">联系议价</span>
           </li>
         </ul>
       </section>
@@ -88,9 +89,7 @@
 </template>
 
 <script>
-export default {
-  name: 'price'
-}
+export default { name: 'price' }
 </script>
 
 <style lang="less" scoped>
