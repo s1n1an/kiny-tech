@@ -52,20 +52,20 @@ export default {
     return {
       gray: false,
       photoNum: 1,
-      kinyPhoto,
+      kinyPhoto
     }
   },
 
   methods: {
     nextPhoto() {
       this.photoNum = (this.photoNum % kinyPhoto) + 1
-    },
+    }
   },
 
   computed: {
     photoSrc() {
       return require(`@img/kiny/${this.photoNum}.jpg`)
-    },
+    }
   },
 
   watch: {
@@ -73,8 +73,8 @@ export default {
       const bodyStyle = document.getElementById('body').style
       bodyStyle.setProperty('filter', isGray ? 'gray' : 'none')
       bodyStyle.setProperty('-webkit-filter', isGray ? 'grayscale(100%)' : 'none')
-    },
-  },
+    }
+  }
 }
 </script>
 

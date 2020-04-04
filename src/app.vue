@@ -28,9 +28,7 @@ export default {
   name: 'app',
 
   data() {
-    return {
-      green: false
-    }
+    return { green: false }
   }
 }
 </script>
