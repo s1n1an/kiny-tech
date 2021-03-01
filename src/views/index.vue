@@ -17,7 +17,7 @@
       <h1>怀念丽丽带给我们的欢乐时光</h1>
       <div class="action">
         <router-link to="/lili">R.I.P</router-link>
-        <span @click="gray = !gray">{{ gray ? '关闭' : '开启' }}RIP配色</span>
+        <span @click="toggleGray">{{ gray ? '关闭' : '开启' }}RIP配色</span>
       </div>
     </section>
 
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { kinyPhoto } from '@/config.js'
 
 export default {
@@ -50,30 +51,27 @@ export default {
 
   data() {
     return {
-      gray: false,
       photoNum: 1,
-      kinyPhoto
+      kinyPhoto,
     }
   },
 
   methods: {
     nextPhoto() {
       this.photoNum = (this.photoNum % kinyPhoto) + 1
+    },
+
+    toggleGray() {
+      this.$store.commit('changeGray')
     }
   },
 
   computed: {
     photoSrc() {
       return require(`@img/kiny/${this.photoNum}.jpg`)
-    }
-  },
-
-  watch: {
-    gray(isGray) {
-      const bodyStyle = document.getElementById('body').style
-      bodyStyle.setProperty('filter', isGray ? 'gray' : 'none')
-      bodyStyle.setProperty('-webkit-filter', isGray ? 'grayscale(100%)' : 'none')
-    }
+    },
+    
+    ...mapState(['gray'])
   }
 }
 </script>
